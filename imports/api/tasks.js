@@ -18,7 +18,7 @@ if (Meteor.isServer) {
 }
 
 Meteor.methods({
-  'tasks.insert'(text) {
+  'tasks.insert'(title, text) {
     check(text, String);
 
     // todo instead of text: {comment: String, }
@@ -29,6 +29,7 @@ Meteor.methods({
     }
 
     Tasks.insert({
+      title,
       text,
       createdAt: new Date(),
       owner: this.userId,
