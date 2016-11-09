@@ -1,0 +1,10 @@
+<template name="list">
+  {{> header}}
+
+  <h3>List</h3>
+  <ul>
+    {{#each tasks}}
+    {{> task}}
+    {{/each}}
+  </ul>
+</template>

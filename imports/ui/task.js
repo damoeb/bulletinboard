@@ -24,6 +24,6 @@ Template.task.events({
 
 Template.task.helpers({
   is_today(date) {
-    return date.toDateString() === new Date().toDateString();
+    return date && date.toDateString() === new Date().toDateString();
   }
 });
