@@ -1,14 +1,33 @@
 <template name="task">
 
-  <li class="{{#if checked}}checked{{/if}} {{#if private}}private{{/if}} {{#if is_today createdAt}}from-today{{/if}}">
+  <li
+    class="{{#if checked}}checked{{/if}} {{#if private}}private{{/if}} {{#if is_today createdAt}}from-today{{/if}} task">
 
     <!--<input type="checkbox" checked="{{checked}}" class="toggle-checked" />-->
+    <div class="row">
+      <div class="col-lg-12">
+        <strong>{{ title }}</strong>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <span class="text">{{ text }}</span>
+      </div>
+    </div>
 
-    <span class="text">{{text}}</span>
 
-    {{#if isOwner}}
-    <button class="delete">&times;</button>
-    {{/if}}
+    <div class="row">
+      <div class="col-lg-12">
+      {{#if isLoggedIn}}
+      <button class="bump">Bump</button>
+      {{/if}}
+      {{#if isOwner}}
+      <button class="delete">&times;</button>
+      {{/if}}
+    </div>
+    </div>
+
 
   </li>
+
 </template>

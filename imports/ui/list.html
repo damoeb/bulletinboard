@@ -1,10 +1,21 @@
 <template name="list">
   {{> header}}
 
-  <h3>List</h3>
-  <ul>
-    {{#each tasks}}
-    {{> task}}
+
+  <div class="container">
+
+    {{#each groups}}
+
+    <h3>{{ date }}</h3>
+
+    <ul class="list-unstyled">
+      {{#each tasks}}
+      {{> task}}
+      {{/each}}
+    </ul>
+
     {{/each}}
-  </ul>
+
+
+  </div>
 </template>

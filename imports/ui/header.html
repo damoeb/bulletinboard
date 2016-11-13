@@ -1,16 +1,17 @@
 <template name="header">
-  <header>
-    <!--<h1>hub board x</h1>-->
-    <!--<p>exchange your talents</p>-->
+  <nav class="navbar navbar-default">
 
-    <!--<label class="hide-old-posts">-->
-    <!--<input type="checkbox" />-->
-    <!--Hide old stuff-->
-    <!--</label>-->
+    <div class="container">
+      <ul class="nav navbar-nav">
+        <li><a href="/">Home</a></li>
+        <li><a href="/create">Create Post</a></li>
+      </ul>
+      <p class="navbar-text navbar-right">
+        {{> loginButtons }}
+      </p>
+    </div>
 
-    <a href="/">Home</a>
-    <a href="/create">New Post</a>
-    {{> loginButtons}}
+  </nav>
 
-  </header>
+  <!--{{> newsletter }}-->
 </template>

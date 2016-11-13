@@ -1,13 +1,7 @@
 import {Meteor} from 'meteor/meteor';
 import {Template} from 'meteor/templating';
 
-import './create.html';
-
-Template.create.helpers({
-  isOwner() {
-    return this.owner === Meteor.userId();
-  },
-});
+import './newsletter.html';
 
 Template.create.events({
   'submit .new-task-form'(event) {

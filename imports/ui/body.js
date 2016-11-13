@@ -5,6 +5,7 @@ import { ReactiveDict } from 'meteor/reactive-dict';
 import './list.js';
 import './create.js';
 import './task.js';
+import './newsletter.js';
 
 Template.body.events({
   'change .hide-old-posts input'(event, instance) {

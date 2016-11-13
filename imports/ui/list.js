@@ -26,7 +26,28 @@ Template.list.helpers({
     // Otherwise, return all of the tasks
     return Tasks.find({}, {sort: {createdAt: -1}});
   },
-  incompleteCount() {
-    return Tasks.find({checked: {$ne: true}}).count();
-  },
+
+  groups() {
+
+    var tasks = Tasks.find({}, {sort: {createdAt: -1}}).fetch();
+
+    console.log(tasks);
+    var groups = _.groupBy(tasks, function (task) {
+      // console.log(task);
+      return task && task.createdAt && task.createdAt.toDateString();
+    });
+
+    return _.map(groups, function (group) {
+      return {
+        date: group[0].createdAt,
+        tasks: group
+      }
+    });
+  }
+});
+
+Template.list.helpers({
+  is_today(date) {
+    return date && date.toDateString() === new Date().toDateString();
+  }
 });

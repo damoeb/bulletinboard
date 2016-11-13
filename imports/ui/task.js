@@ -7,6 +7,9 @@ Template.task.helpers({
   isOwner() {
     return this.owner === Meteor.userId();
   },
+  isLoggedIn() {
+    return Meteor.userId();
+  },
 });
 
 Template.task.events({
